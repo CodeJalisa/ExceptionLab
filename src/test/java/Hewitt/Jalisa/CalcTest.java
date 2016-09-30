@@ -1,5 +1,6 @@
 package Hewitt.Jalisa;
 
+import com.sun.org.apache.xpath.internal.operations.Div;
 import org.junit.Test;
 
 import static org.junit.Assert.assertEquals;
@@ -34,18 +35,18 @@ public class CalcTest {
         assertEquals("Answer should be 20",actual,expected);
     }
 
-    @Test(expected = ArithmeticException.class)
-    public void divideTest(){
-        Calc divTest= new Calc();
-        divTest.divide(5,0);
+    @Test(expected = DivisionByZeroException.class)
+    public void divideTest()throws DivisionByZeroException{
+        //Calc divTest= new Calc();
+        Calc.divide(5,0);
         //assertEquals("Should have thrown an error ",actual,);
     }
 
     @Test
-    public void divideTest2(){
-        Calc divTest= new Calc();
+    public void divideTest2()throws DivisionByZeroException{
+        //Calc divTest= new Calc();
         int expected = 2;
-        int actual = divTest.divide(12,6);
+        int actual = Calc.divide(12,6);
         assertEquals("Answer should be 2",actual,expected);
     }
 
