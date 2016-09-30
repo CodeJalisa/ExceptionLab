@@ -50,6 +50,18 @@ public class CalcTest {
         assertEquals("Answer should be 2",actual,expected);
     }
 
+    @Test (expected = ComplexException.class)
+    public void squareRootTest() throws ComplexException{
+        Calc.squareRoot(-1);
+    }
+
+    @Test
+    public void squareRoot() throws ComplexException{
+        double expected = 5;
+        double actual = Calc.squareRoot(25);
+        assertEquals(expected,actual,.01);
+    }
+
 
 
 

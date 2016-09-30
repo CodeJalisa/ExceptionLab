@@ -33,6 +33,15 @@ public class Calc{
 
     }
 
+    public static double squareRoot(double x) throws ComplexException{
+        if(x<0){
+            throw new ComplexException();
+        }
+        double y = Math.sqrt(x);
+        return y;
+
+    }
+
 
 
 
